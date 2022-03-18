@@ -140,7 +140,7 @@ let y = x.clone();
 println!("{}", y.lock().unwrap());
 ```
 
-Flowistry *can* determine that `*x.lock().unwrap() = 1` is a mutation to `x`, but is *can not* determine that it is a mutation to `y`. So if you focus on `y`, the assignment to 1 would be faded out, even though it is relevant to the value of `y`.
+Flowistry *can* determine that `*x.lock().unwrap() = 1` is a mutation to `x`, but it *can not* determine that it is a mutation to `y`. So if you focus on `y`, the assignment to 1 would be faded out, even though it is relevant to the value of `y`.
 
 We are researching methods to overcome this limitation, but for now just be aware that this is the main case where Flowistry is known to provide an incorrect answer.
 
